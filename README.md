@@ -142,4 +142,4 @@ fzo(arr);
 
 ## License
 
-[Apache 2.0]("./LICENSE")
+[Apache 2.0](https://github.com/rewrite0w0/fzo/blob/main/LICENSE)
