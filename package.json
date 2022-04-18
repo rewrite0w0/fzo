@@ -1,0 +1,35 @@
+{
+  "name": "fzo",
+  "version": "0.0.1",
+  "description": "fzo is simply freeze object library",
+  "main": "dist/lib.cjs.js",
+  "browser": "dist/lib.js",
+  "module": "dist/lib.es.js",
+  "scripts": {
+    "lint": "eslint --fix src/**/*.js",
+    "test": "jest",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rewrite0w0/fzo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rewrite0w0/fzo/issues"
+  },
+  "homepage": "https://github.com/rewrite0w0/fzo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "eslint": "^8.13.0",
+    "jest": "^27.5.1",
+    "rollup": "^2.70.2",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
