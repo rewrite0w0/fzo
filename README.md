@@ -113,3 +113,29 @@ We all like "pure," but the truth, world is not pure.
 But we must aspire to the maximum of purity.
 
 So, let's go on a journey for "pure".
+
+## Installation
+
+### browser
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/fzo"></script>
+```
+
+### npm & node.js
+
+```bash
+npm i fzo
+```
+
+```js
+const _ = require('fzo');
+const { fzo } = require('fzo');
+
+const arr = [1, 2, 3, [4, 5, 6, 7]];
+fzo(arr);
+```
+
+## License
+
+[Apache 2.0]("./LICENSE")
