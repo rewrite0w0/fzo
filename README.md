@@ -29,6 +29,7 @@ const obj = {
 
 // hmmm...
 obj.tanaka = 'rie';
+
 // obj.tanaka is "manami"? "rie?"
 console.log(obj.tanaka); // "rie" wow...
 
@@ -60,7 +61,8 @@ const obj = {
 Object.freeze(obj);
 obj.kanda = 'rie';
 
-console.log(obj); // { kugimiya:"rie", murakawa:"rie", takahashi:"rie", tanaka:"minami" } nice :)
+console.log(obj);
+// { kugimiya:"rie", murakawa:"rie", takahashi:"rie", tanaka:"minami" } nice :)
 
 // is perfect?
 
@@ -81,7 +83,7 @@ formation[0] = [4, 5, 1];
 console.log(formation[0]); // [4, 4, 2] nice :?
 
 formation[3512] = [3, 5, 1, 2];
-console.log(formation); // not mutable
+console.log(formation); // immutable :)
 
 formation[0][1] = 5;
 formation[0][2] = 1;
@@ -105,7 +107,7 @@ voiceActor.minami = 'tsuda';
 console.log(voiceActor.minami); // "tanaka" nice :?
 
 voiceActor.rie.tanaka = 'minami';
-console.log(voiceActor.rie.tanaka); // "minami" not "rie" wow... :<
+console.log(voiceActor.rie.tanaka); // "minami" is not "rie" wow... :<
 ```
 
 We all like "pure," but the truth, world is not pure.
@@ -119,7 +121,7 @@ So, let's go on a journey for "pure".
 ### browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/fzo"></script>
+<script src="https://cdn.jsdelivr.net/npm/fzo@latest"></script>
 ```
 
 ### npm & node.js
@@ -129,10 +131,12 @@ npm i fzo
 ```
 
 ```js
-const _ = require('fzo');
-const { fzo } = require('fzo');
-
 const arr = [1, 2, 3, [4, 5, 6, 7]];
+
+const _ = require('fzo');
+_.fzo(arr);
+
+const { fzo } = require('fzo');
 fzo(arr);
 ```
 
