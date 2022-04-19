@@ -90,7 +90,9 @@ formation[0][2] = 1;
 console.log(formation[0]); // [4, 5, 1] wow...
 
 formation[4].modern = { Lavolpiana: '3-2-2-3' };
-console.log(formation[4]); // { classic: {...}, modern: {...}} wow..
+console.log(formation[4]);
+
+// { classic: { "wm": "3-2-2-3" }, modern: {  "Lavolpiana": "3-2-2-3" }} wow...
 
 const voiceActor = {
   minami: 'tanaka',
@@ -108,6 +110,29 @@ console.log(voiceActor.minami); // "tanaka" nice :?
 
 voiceActor.rie.tanaka = 'minami';
 console.log(voiceActor.rie.tanaka); // "minami" is not "rie" wow... :<
+```
+
+And there is something strange about DeepClone, the popular and easy way to do it.
+
+```js
+const arr = [1, 2, 3, 4, 5];
+const newArr = [...arr];
+
+arr.push(42);
+
+console.log(arr); // [1, 2, 3, 4, 5, 42]
+conosle.log(newArr); // [1, 2, 3, 4, 5]
+// ok :)
+```
+
+```js
+const arr = [[1, 2, 3, 4], 5, 6, 7, 8, 9];
+const newArr = [...arr];
+
+arr[0].push(42);
+
+console.log(arr); // [[1, 2, 3, 4, 42], 5, 6, 7, 8, 9]
+console.log(newArr); // [[1, 2, 3, 4, 42], 5, 6, 7, 8, 9] wow... :<
 ```
 
 We all like "pure," but the truth, world is not pure.
@@ -132,12 +157,20 @@ npm i fzo
 
 ```js
 const arr = [1, 2, 3, [4, 5, 6, 7]];
-
 const _ = require('fzo');
-_.fzo(arr);
 
-const { fzo } = require('fzo');
-fzo(arr);
+const frozenArr = _.fzo(arr);
+const deepCloneArr = _.deepClone(arr);
+const frozenDeepCloneArr = _.fzo(_.deepClone(arr));
+```
+
+```js
+const arr = [1, 2, 3, [4, 5, 6, 7]];
+const { fzo, deepClone } = require('fzo');
+
+const frozenArr = fzo(arr);
+const deepCloneArr = deepClone(arr);
+const frozenDeepCloneArr = fzo(deepClone(arr));
 ```
 
 ## License

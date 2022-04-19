@@ -1,6 +1,6 @@
 {
   "name": "fzo",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "description": "fzo is simply freeze object library",
   "main": "dist/fzo.cjs.js",
   "browser": "dist/fzo.js",
